@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Modelo;
+package modelo;
 
 /**
  *
@@ -11,11 +11,11 @@ package Modelo;
  */
 
     
-import TiendaMusica.Disco;
-import TiendaMusica.Poster;
+import negocio.Disco;
+import negocio.Poster;
 import java.sql.*;
 import java.util.*;
-import TiendaMusica.Producto;
+import negocio.Producto;
 
 /**
  *
@@ -53,7 +53,7 @@ public class Conexion {
         try {
             conectar();
             state.executeUpdate("INSERT INTO producto(Codigo, Nombre, Precio, Banda, Annio) VALUES('" + disco.getCodigo()
-                    + "', '" + disco.getNombre() + "'," + disco.getPrecio() + ",'" + disco.getBanda() + "','" + disco.getAnnio()+"');");
+                    + "', '" + disco.getNombre() + "'," + disco.getPrecio() + ",'" + disco.getArtista() + "','" + disco.getAnnio()+"');");
             con.close();
         } catch (Exception ex) {
             ex.printStackTrace();

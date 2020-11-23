@@ -8,9 +8,9 @@ package gui;
 import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;
-import Modelo.Conexion;
-import TiendaMusica.Disco;
-import TiendaMusica.Poster;
+import modelo.Conexion;
+import negocio.Disco;
+import negocio.Poster;
 
 /**
  *
@@ -397,7 +397,7 @@ public class Ventana extends javax.swing.JFrame {
             disco.setCodigo(txtCodigoInsertar.getText());
             disco.setNombre(txtNombreInsertar.getText());
             disco.setPrecio(Integer.parseInt(txtPrecioInsertar.getText()));
-            disco.setBanda(txtBandaInsertar.getText());
+            disco.setArtista(txtBandaInsertar.getText());
             disco.setAnnio(Integer.parseInt(txtAnnioInsertar.getText()));
             con.insertarDisco(disco);
         }

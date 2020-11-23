@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TiendaMusica;
+package negocio;
 
 /**
  *
@@ -13,7 +13,7 @@ public class Poster extends Producto{
     private String dimension;
     
     public Poster(){
-        super():
+        super();
     }
 
     public Poster(String dimension, String codigo, String nombre, int precio, int cantidad) {

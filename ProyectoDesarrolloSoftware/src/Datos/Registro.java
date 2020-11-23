@@ -1,7 +1,7 @@
 package datos;
 
 import java.util.ArrayList;
-import  TiendaMusica.Venta;
+import  negocio.Venta;
 
 /*
  * @author jhon_
