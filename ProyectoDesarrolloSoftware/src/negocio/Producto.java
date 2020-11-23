@@ -32,8 +32,15 @@ public abstract class Producto{
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(String codigo) throws Exception {
+     if (codigo.trim().length()>=4)
+     {
         this.codigo = codigo;
+     }
+     else
+     {
+         throw new Exception("Debe ingresar un código");
+     }
     }
 
     public String getNombre() {
