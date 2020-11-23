@@ -31,7 +31,7 @@ public class Conexion {
     public void conectar() {
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/farmacia4", "root",null);
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tiendamusicamatijon", "root",null);
             state = con.createStatement();
         } catch (Exception ex) {
             ex.printStackTrace();
@@ -67,8 +67,8 @@ public class Conexion {
         public void insertarVenta(Venta venta) {
         try {
             conectar();
-            state.executeUpdate("INSERT INTO producto(Codigo, Nombre, Precio, Dimension) VALUES('" + poster.getCodigo()
-                    + "', '" + venta.getNombre() + "'," + poster.getPrecio() + ",'" + poster.getDimension() + "');");
+            state.executeUpdate("INSERT INTO venta(Codigo, Nombre, Precio, Dimension) VALUES('" + venta.getNumero()
+                    + "', '" + venta.getFecha()+ "'," + venta.getProducto()+ "');");
             con.close();
         } catch (Exception ex) {
             ex.printStackTrace();

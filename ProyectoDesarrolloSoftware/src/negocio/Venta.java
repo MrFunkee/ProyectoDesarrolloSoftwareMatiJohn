@@ -15,28 +15,34 @@ import java.util.ArrayList;
 public class Venta  implements Calculable{
     private int numero;
     private String fecha;   
-    private Cliente cliente;
+    private Producto producto;
     ArrayList<Producto> venta = new ArrayList();
     
     
     public Venta() {
-        cliente = new Cliente();
+        producto = new Producto() {};
     }
 
-    public Venta(int numero, String fecha, Cliente cliente) {
-        this.numero = numero;
+    public Venta(int numero, String fecha, Cliente cliente) throws Exception {
+        setNumero(numero);
         this.fecha = fecha;
-        this.cliente = cliente;
+        this.producto = producto;
     }
 
     public int getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(int numero) throws Exception {
+      if (numero>0)
+      {
         this.numero = numero;
+      }
+      else
+      {
+          throw new Exception("Ingrese el numero de venta");
+      }
     }
-
     public String getFecha() {
         return fecha;
     }
@@ -45,12 +51,12 @@ public class Venta  implements Calculable{
         this.fecha = fecha;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public ArrayList<Producto> getVenta() {

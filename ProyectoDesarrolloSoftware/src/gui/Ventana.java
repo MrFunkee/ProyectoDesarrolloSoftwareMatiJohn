@@ -52,7 +52,7 @@ public class Ventana extends javax.swing.JFrame {
         txtCodigoInsertar = new javax.swing.JTextField();
         lblNombreInsertar = new javax.swing.JLabel();
         lblBandaInsertar = new javax.swing.JLabel();
-        txtBandaInsertar = new javax.swing.JTextField();
+        txtArtistaInsertar = new javax.swing.JTextField();
         lblAnnioInsertar = new javax.swing.JLabel();
         txtAnnioInsertar = new javax.swing.JTextField();
         radPoster = new javax.swing.JRadioButton();
@@ -196,26 +196,26 @@ public class Ventana extends javax.swing.JFrame {
         lblNombreInsertar.setText("Nombre");
         jPanel2.add(lblNombreInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 140, -1, -1));
 
-        lblBandaInsertar.setText("Banda");
+        lblBandaInsertar.setText("Artista");
         jPanel2.add(lblBandaInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 288, -1, -1));
 
-        txtBandaInsertar.setForeground(new java.awt.Color(102, 102, 102));
-        txtBandaInsertar.setText("Inserte banda del disco");
-        txtBandaInsertar.setFocusable(false);
-        txtBandaInsertar.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtArtistaInsertar.setForeground(new java.awt.Color(102, 102, 102));
+        txtArtistaInsertar.setText("Inserte banda del disco");
+        txtArtistaInsertar.setFocusable(false);
+        txtArtistaInsertar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                txtBandaInsertarFocusGained(evt);
+                txtArtistaInsertarFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                txtBandaInsertarFocusLost(evt);
+                txtArtistaInsertarFocusLost(evt);
             }
         });
-        txtBandaInsertar.addActionListener(new java.awt.event.ActionListener() {
+        txtArtistaInsertar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBandaInsertarActionPerformed(evt);
+                txtArtistaInsertarActionPerformed(evt);
             }
         });
-        jPanel2.add(txtBandaInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 288, 168, -1));
+        jPanel2.add(txtArtistaInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 288, 168, -1));
 
         lblAnnioInsertar.setText("Año");
         jPanel2.add(lblAnnioInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 321, -1, -1));
@@ -265,7 +265,7 @@ public class Ventana extends javax.swing.JFrame {
         });
         jPanel2.add(btnInsertarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 362, 154, 41));
 
-        jTabbedPane2.addTab("Insertar Productos", jPanel2);
+        jTabbedPane2.addTab("Mantenedor Productos", jPanel2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -316,9 +316,9 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPrecioInsertarActionPerformed
 
-    private void txtBandaInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBandaInsertarActionPerformed
+    private void txtArtistaInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtArtistaInsertarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtBandaInsertarActionPerformed
+    }//GEN-LAST:event_txtArtistaInsertarActionPerformed
 
     private void txtAnnioInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAnnioInsertarActionPerformed
         // TODO add your handling code here:
@@ -334,8 +334,8 @@ public class Ventana extends javax.swing.JFrame {
         txtPrecioInsertar.setForeground(Color.black);
         txtDimensionesInsertar.setFocusable(true);
         txtDimensionesInsertar.setForeground(Color.black);
-        txtBandaInsertar.setFocusable(false);
-        txtBandaInsertar.setForeground(Color.gray);
+        txtArtistaInsertar.setFocusable(false);
+        txtArtistaInsertar.setForeground(Color.gray);
         txtAnnioInsertar.setFocusable(false);
         txtAnnioInsertar.setForeground(Color.gray);
         btnInsertarProducto.setEnabled(true);
@@ -351,8 +351,8 @@ public class Ventana extends javax.swing.JFrame {
         txtPrecioInsertar.setForeground(Color.black);
         txtDimensionesInsertar.setFocusable(false);
         txtDimensionesInsertar.setForeground(Color.gray);
-        txtBandaInsertar.setFocusable(true);
-        txtBandaInsertar.setForeground(Color.black);
+        txtArtistaInsertar.setFocusable(true);
+        txtArtistaInsertar.setForeground(Color.black);
         txtAnnioInsertar.setFocusable(true);
         txtAnnioInsertar.setForeground(Color.black);
         btnInsertarProducto.setEnabled(true);
@@ -381,7 +381,7 @@ public class Ventana extends javax.swing.JFrame {
             disco.setCodigo(txtCodigoInsertar.getText());
             disco.setNombre(txtNombreInsertar.getText());
             disco.setPrecio(Integer.parseInt(txtPrecioInsertar.getText()));
-            disco.setArtista(txtBandaInsertar.getText());
+            disco.setArtista(txtArtistaInsertar.getText());
             disco.setAnnio(Integer.parseInt(txtAnnioInsertar.getText()));
             con.insertarDisco(disco);
                 }
@@ -443,17 +443,17 @@ public class Ventana extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtDimensionesInsertarFocusLost
 
-    private void txtBandaInsertarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBandaInsertarFocusGained
-        if(txtBandaInsertar.getText().equals("Inserte banda del disco")){
-            txtBandaInsertar.setText("");
+    private void txtArtistaInsertarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtArtistaInsertarFocusGained
+        if(txtArtistaInsertar.getText().equals("Inserte banda del disco")){
+            txtArtistaInsertar.setText("");
         }
-    }//GEN-LAST:event_txtBandaInsertarFocusGained
+    }//GEN-LAST:event_txtArtistaInsertarFocusGained
 
-    private void txtBandaInsertarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtBandaInsertarFocusLost
-        if(txtBandaInsertar.getText().equals("")){
-            txtBandaInsertar.setText("Inserte banda del disco");
+    private void txtArtistaInsertarFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtArtistaInsertarFocusLost
+        if(txtArtistaInsertar.getText().equals("")){
+            txtArtistaInsertar.setText("Inserte banda del disco");
         }
-    }//GEN-LAST:event_txtBandaInsertarFocusLost
+    }//GEN-LAST:event_txtArtistaInsertarFocusLost
 
     private void txtAnnioInsertarFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtAnnioInsertarFocusGained
         if(txtAnnioInsertar.getText().equals("Inserte año del disco")){
@@ -525,7 +525,7 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JRadioButton radDisco;
     private javax.swing.JRadioButton radPoster;
     private javax.swing.JTextField txtAnnioInsertar;
-    private javax.swing.JTextField txtBandaInsertar;
+    private javax.swing.JTextField txtArtistaInsertar;
     private javax.swing.JTextField txtCodigoInsertar;
     private javax.swing.JTextField txtDimensionesInsertar;
     private javax.swing.JTextField txtNombreInsertar;
