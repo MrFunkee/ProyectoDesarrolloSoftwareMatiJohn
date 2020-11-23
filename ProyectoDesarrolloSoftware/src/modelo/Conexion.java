@@ -16,6 +16,7 @@ import negocio.Poster;
 import java.sql.*;
 import java.util.*;
 import negocio.Producto;
+import negocio.Venta;
 
 /**
  *
@@ -54,6 +55,20 @@ public class Conexion {
             conectar();
             state.executeUpdate("INSERT INTO producto(Codigo, Nombre, Precio, Banda, Annio) VALUES('" + disco.getCodigo()
                     + "', '" + disco.getNombre() + "'," + disco.getPrecio() + ",'" + disco.getArtista() + "','" + disco.getAnnio()+"');");
+            con.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    
+    
+    
+        public void insertarVenta(Venta venta) {
+        try {
+            conectar();
+            state.executeUpdate("INSERT INTO producto(Codigo, Nombre, Precio, Dimension) VALUES('" + poster.getCodigo()
+                    + "', '" + venta.getNombre() + "'," + poster.getPrecio() + ",'" + poster.getDimension() + "');");
             con.close();
         } catch (Exception ex) {
             ex.printStackTrace();

@@ -17,10 +17,10 @@ public class Disco extends Producto{
         super();
     }
 
-    public Disco(String artista, int annio, String codigo, String nombre, int precio, int cantidad) {
+    public Disco(String artista, int annio, String codigo, String nombre, int precio, int cantidad) throws Exception {
         super(codigo, nombre, precio);
-        this.artista = artista;
-        this.annio = annio;
+        setArtista(artista);
+        setAnnio(annio);
     }
 
     public String getArtista() {
@@ -42,8 +42,15 @@ public class Disco extends Producto{
         return annio;
     }
 
-    public void setAnnio(int annio) {
+    public void setAnnio(int annio) throws Exception {
+      if (annio>0)
+      {
         this.annio = annio;
+      }
+      else
+      {
+          throw new Exception("Ingrese el año del Album");
+      }
     }
     
     @Override

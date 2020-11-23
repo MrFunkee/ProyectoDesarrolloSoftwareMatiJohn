@@ -16,24 +16,37 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String nombreCliente, String rut) {
-        this.nombreCliente = nombreCliente;
-        this.rut = rut;
+    public Cliente(String nombreCliente, String rut) throws Exception {
+        setNombreCliente(nombreCliente);
+        setRut(rut);
     }
 
     public String getNombreCliente() {
         return nombreCliente;
     }
 
-    public void setNombreCliente(String nombreCliente) {
+    public void setNombreCliente(String nombreCliente) throws Exception {
+    if (nombreCliente.length()>0)
+    {
         this.nombreCliente = nombreCliente;
     }
-
+    else
+    {
+         throw new Exception("Ingrese el nombre del cliente");
+    }
+    }
     public String getRut() {
         return rut;
     }
 
-    public void setRut(String rut) {
-        this.rut = rut;
+    public void setRut(String rut) throws Exception {
+    if (rut.length()==9)
+    {
+        this.nombreCliente = nombreCliente;
     }
+    else
+    {
+         throw new Exception("Ingrese el rut de cliente sin puntos ni comas");
+    }
+    }    
 }

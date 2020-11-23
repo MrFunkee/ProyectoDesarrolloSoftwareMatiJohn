@@ -23,7 +23,7 @@ public abstract class Producto{
     public Producto(String codigo, String nombre, int precio) throws Exception {
         setCodigo(codigo);
         setNombre(nombre);
-        this.precio = precio;
+        setPrecio(precio);
     }
 
     public String getCodigo() {

@@ -16,9 +16,9 @@ public class Poster extends Producto{
         super();
     }
 
-    public Poster(String dimension, String codigo, String nombre, int precio, int cantidad) {
+    public Poster(String dimension, String codigo, String nombre, int precio, int cantidad) throws Exception {
         super(codigo, nombre, precio);
-        this.dimension = dimension;
+        setDimension(dimension);
     }
 
     public String getDimension() {

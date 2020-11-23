@@ -8,6 +8,7 @@ package gui;
 import java.awt.Color;
 import java.util.HashSet;
 import java.util.Set;
+import javax.swing.JOptionPane;
 import modelo.Conexion;
 import negocio.Disco;
 import negocio.Poster;
@@ -45,12 +46,10 @@ public class Ventana extends javax.swing.JFrame {
         txtPrecioInsertar = new javax.swing.JTextField();
         lblPrecioInsertar = new javax.swing.JLabel();
         txtDimensionesInsertar = new javax.swing.JTextField();
-        txtCantidadInsertar = new javax.swing.JTextField();
         txtNombreInsertar = new javax.swing.JTextField();
         lblCodigoInsertar = new javax.swing.JLabel();
         lblDimensionesInsertar = new javax.swing.JLabel();
         txtCodigoInsertar = new javax.swing.JTextField();
-        lblCantidadInsertar = new javax.swing.JLabel();
         lblNombreInsertar = new javax.swing.JLabel();
         lblBandaInsertar = new javax.swing.JLabel();
         txtBandaInsertar = new javax.swing.JTextField();
@@ -62,7 +61,6 @@ public class Ventana extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -94,12 +92,12 @@ public class Ventana extends javax.swing.JFrame {
                 .addComponent(jButton2)
                 .addGap(97, 97, 97)
                 .addComponent(jButton3)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap(351, Short.MAX_VALUE)
+                .addContainerGap(345, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
@@ -132,7 +130,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2.add(txtPrecioInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 177, 168, -1));
 
         lblPrecioInsertar.setText("Precio");
-        jPanel2.add(lblPrecioInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 173, -1, -1));
+        jPanel2.add(lblPrecioInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, -1, -1));
 
         txtDimensionesInsertar.setForeground(new java.awt.Color(102, 102, 102));
         txtDimensionesInsertar.setText("Inserte dimensiones poster");
@@ -151,16 +149,6 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtDimensionesInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 251, 168, -1));
-
-        txtCantidadInsertar.setForeground(new java.awt.Color(102, 102, 102));
-        txtCantidadInsertar.setText("Inserte cantidad producto");
-        txtCantidadInsertar.setFocusable(false);
-        txtCantidadInsertar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCantidadInsertarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtCantidadInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 214, 168, -1));
 
         txtNombreInsertar.setForeground(new java.awt.Color(102, 102, 102));
         txtNombreInsertar.setText("Inserte nombre producto");
@@ -184,7 +172,7 @@ public class Ventana extends javax.swing.JFrame {
         jPanel2.add(lblCodigoInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 103, -1, -1));
 
         lblDimensionesInsertar.setText("Dimensiones");
-        jPanel2.add(lblDimensionesInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 247, -1, -1));
+        jPanel2.add(lblDimensionesInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
 
         txtCodigoInsertar.setForeground(new java.awt.Color(102, 102, 102));
         txtCodigoInsertar.setText("Inserte codigo producto");
@@ -204,9 +192,6 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jPanel2.add(txtCodigoInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 103, 168, -1));
-
-        lblCantidadInsertar.setText("Cantidad");
-        jPanel2.add(lblCantidadInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 214, -1, -1));
 
         lblNombreInsertar.setText("Nombre");
         jPanel2.add(lblNombreInsertar, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 140, -1, -1));
@@ -323,10 +308,6 @@ public class Ventana extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreInsertarActionPerformed
 
-    private void txtCantidadInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCantidadInsertarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtCantidadInsertarActionPerformed
-
     private void txtDimensionesInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDimensionesInsertarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDimensionesInsertarActionPerformed
@@ -379,6 +360,7 @@ public class Ventana extends javax.swing.JFrame {
 
     //----------BOTON PARA INSERTAR PRODUCTOS A LA BASE DE DATOS----------------- ***AUN NO HA SIDO TESTEADO***
     private void btnInsertarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarProductoActionPerformed
+        try{    
         Poster poster = new Poster();
         Disco disco = new Disco();
         Conexion con = new Conexion();
@@ -392,6 +374,8 @@ public class Ventana extends javax.swing.JFrame {
             poster.setDimension(txtDimensionesInsertar.getText());
             con.insertarPoster(poster);
         }
+
+
         else
         {
             disco.setCodigo(txtCodigoInsertar.getText());
@@ -400,7 +384,13 @@ public class Ventana extends javax.swing.JFrame {
             disco.setArtista(txtBandaInsertar.getText());
             disco.setAnnio(Integer.parseInt(txtAnnioInsertar.getText()));
             con.insertarDisco(disco);
+                }
+        }catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null,e.getMessage());
         }
+                
+    
     }//GEN-LAST:event_btnInsertarProductoActionPerformed
 
 
@@ -528,7 +518,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JLabel lblAnnioInsertar;
     private javax.swing.JLabel lblBandaInsertar;
-    private javax.swing.JLabel lblCantidadInsertar;
     private javax.swing.JLabel lblCodigoInsertar;
     private javax.swing.JLabel lblDimensionesInsertar;
     private javax.swing.JLabel lblNombreInsertar;
@@ -537,7 +526,6 @@ public class Ventana extends javax.swing.JFrame {
     private javax.swing.JRadioButton radPoster;
     private javax.swing.JTextField txtAnnioInsertar;
     private javax.swing.JTextField txtBandaInsertar;
-    private javax.swing.JTextField txtCantidadInsertar;
     private javax.swing.JTextField txtCodigoInsertar;
     private javax.swing.JTextField txtDimensionesInsertar;
     private javax.swing.JTextField txtNombreInsertar;
