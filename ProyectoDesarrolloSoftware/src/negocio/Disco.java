@@ -18,7 +18,7 @@ public class Disco extends Producto{
     }
 
     public Disco(String artista, int annio, String codigo, String nombre, int precio, int cantidad) {
-        super(codigo, nombre, precio, cantidad);
+        super(codigo, nombre, precio);
         this.artista = artista;
         this.annio = annio;
     }
@@ -27,8 +27,15 @@ public class Disco extends Producto{
         return artista;
     }
 
-    public void setArtista(String artist) {
+    public void setArtista(String artist) throws Exception{
+    if (artista.length()>0)
+    {
         this.artista = artista;
+    }
+    else
+    {
+         throw new Exception("Ingrese el Artista del Album");
+    }
     }
 
     public int getAnnio() {

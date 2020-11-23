@@ -17,7 +17,7 @@ public class Poster extends Producto{
     }
 
     public Poster(String dimension, String codigo, String nombre, int precio, int cantidad) {
-        super(codigo, nombre, precio, cantidad);
+        super(codigo, nombre, precio);
         this.dimension = dimension;
     }
 
@@ -25,9 +25,14 @@ public class Poster extends Producto{
         return dimension;
     }
 
-    public void setDimension(String dimension) {
+    public void setDimension(String dimension)throws Exception {
+   if (dimension.length()>0)
+    {
         this.dimension = dimension;
     }
-    
-    
+    else
+    {
+         throw new Exception("Ingrese las dimensiones del Poster");
+    }
+    }   
 }

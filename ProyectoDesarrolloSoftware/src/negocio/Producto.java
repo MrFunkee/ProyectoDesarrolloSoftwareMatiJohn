@@ -15,17 +15,15 @@ public abstract class Producto{
     protected String codigo;
     protected String nombre;
     protected int precio;
-    protected int cantidad;
     
     public Producto(){
         
     }
     
-    public Producto(String codigo, String nombre, int precio, int cantidad) {
-        this.codigo = codigo;
-        this.nombre = nombre;
+    public Producto(String codigo, String nombre, int precio) throws Exception {
+        setCodigo(codigo);
+        setNombre(nombre);
         this.precio = precio;
-        this.cantidad = cantidad;
     }
 
     public String getCodigo() {
@@ -47,25 +45,32 @@ public abstract class Producto{
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    public void setNombre(String nombre) throws Exception {
+    if (nombre.length()>0)
+    {
         this.nombre = nombre;
     }
-
+    else
+    {
+         throw new Exception("Ingrese el nombre del Producto");
+    }
+    }
+    
     public int getPrecio() {
         return precio;
     }
 
-    public void setPrecio(int precio) {
+    public void setPrecio(int precio) throws Exception {
+      if (precio>0)
+      {
         this.precio = precio;
+      }
+      else
+      {
+          throw new Exception("Ingrese un precio");
+      }
     }
 
-    public int getCantidad() {
-        return cantidad;
-    }
 
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
 
-    
 }
