@@ -14,21 +14,21 @@ public class Disco extends Producto{
     private int annio;
     
     public Disco(){
-        
+        super();
     }
 
-    public Disco(String banda, int annio, String codigo, String nombre, int precio, int cantidad) {
+    public Disco(String artista, int annio, String codigo, String nombre, int precio, int cantidad) {
         super(codigo, nombre, precio, cantidad);
-        this.artista = banda;
+        this.artista = artista;
         this.annio = annio;
     }
 
-    public String getBanda() {
+    public String getArtista() {
         return artista;
     }
 
-    public void setBanda(String banda) {
-        this.artista = banda;
+    public void setArtista(String artist) {
+        this.artista = artista;
     }
 
     public int getAnnio() {

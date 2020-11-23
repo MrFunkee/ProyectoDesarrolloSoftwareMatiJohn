@@ -13,7 +13,7 @@ public class Poster extends Producto{
     private String dimension;
     
     public Poster(){
-        
+        super():
     }
 
     public Poster(String dimension, String codigo, String nombre, int precio, int cantidad) {
